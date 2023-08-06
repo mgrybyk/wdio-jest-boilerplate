@@ -1,4 +1,3 @@
-import { $ } from '@wdio/globals'
 import Page from './page.js';
 
 /**
@@ -9,15 +8,15 @@ class LoginPage extends Page {
      * define selectors using getter methods
      */
     public get inputUsername () {
-        return $('#username');
+        return chrome.$('#username');
     }
 
     public get inputPassword () {
-        return $('#password');
+        return chrome.$('#password');
     }
 
     public get btnSubmit () {
-        return $('button[type="submit"]');
+        return chrome.$('button[type="submit"]');
     }
 
     /**

@@ -1,4 +1,5 @@
-import { expect } from '@wdio/globals'
+import { expect } from 'expect-webdriverio'
+import { describe, it } from '@jest/globals'
 import LoginPage from '../pageobjects/login.page.js'
 import SecurePage from '../pageobjects/secure.page.js'
 
@@ -8,8 +9,6 @@ describe('My Login application', () => {
 
         await LoginPage.login('tomsmith', 'SuperSecretPassword!')
         await expect(SecurePage.flashAlert).toBeExisting()
-        await expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!')
+        await expect(SecurePage.flashAlert).toHaveTextContaining('You logged into a secure area!')
     })
 })
-
